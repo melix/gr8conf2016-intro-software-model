@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="author" content="by Cédric Champeau (@CedricChampeau)" /><title>The Java Software Model</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script><link rel="stylesheet" type="text/css" href="reveal.js/css/theme/asciinema-player.css" />
+<link rel="stylesheet" type="text/css" href="reveal.js/css/theme/github-gist.css" />
+<script src="reveal.js/css/theme/asciinema-player.js"></script></head><body><div class="reveal"><div class="slides"><section><h1>The Java Software Model</h1><p><small>by Cédric Champeau (@CedricChampeau)</small></p></section><section id="gr8conf" data-background="reveal.js/css/theme/presentation-16-9-first.png"></section>
+<section id="who-am-i"><h2>Who am I</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">speaker {
+    name 'Cédric Champeau'
+    company 'Gradle Inc'
+    oss 'Apache Groovy committer',
+    successes (['Static type checker',
+                    'Static compilation',
+                    'Traits',
+                    'Markup template engine',
+                    'DSLs'])
+        failures Stream.of(bugs),
+        twitter '@CedricChampeau',
+        github 'melix',
+        extraDescription '''Groovy in Action 2 co-author
+Misc OSS contribs (Gradle plugins, deck2pdf, jlangdetect, ...)'''
+}</code></pre></div></div>
+<div class="imageblock" style=""><div class="content"><img src="./images/GradleLogoReg.png" alt="GradleLogoReg" /></div></div></section>
+<section id="groovy-in-action-2"><h2>Groovy in Action 2</h2><div class="paragraph"><p><span class="image"><img src="./images/koenig2.png" alt="koenig2" /></span></p></div>
+<div class="paragraph"><p><a href="https://www.manning.com/books/groovy-in-action-second-edition" class="bare">https://www.manning.com/books/groovy-in-action-second-edition</a></p></div>
+<div class="paragraph"><p>Coupon <em>ctwgr8conftw</em></p></div></section>
+<section><section id="why-gradle"><h2>Why Gradle</h2></section><section id="a" data-background="images/End-Broken-Release-Processes-01.svg"></section><section id="a-2" data-background="images/End-Bug-Regressions-01.svg"></section><section id="a-3" data-background="images/End-Build-Script-Chaos.svg"></section><section id="a-4" data-background="images/End-Code-Freeze-01.svg"></section><section id="a-5" data-background="images/End-Deathmarched-01.svg"></section><section id="a-6" data-background="images/End-Long-Build-Times-01.svg"></section></section>
+<section id="disclaimer" data-background="images/egg.jpg"><h2>Disclaimer</h2></section>
+<section id="current-model"><h2>Current model</h2><div class="ulist"><ul><li><p>Convention based</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">apply plugin: 'application'
+allprojects {
+   apply plugin: 'java'
+}</code></pre></div></div>
+<div class="ulist"><ul><li><p>Coupled</p><div class="ulist"><ul><li><p>Determining which tasks need to be <em>executed</em> is easy</p></li><li><p>Determining which tasks need to be <em>configured</em> is hard</p></li><li><p>Configuring properly is hard (<code>afterEvaluate</code>&#8230;&#8203;)</p></li></ul></div></li></ul></div></section>
+<section id="why-a-new-model"><h2>Why a new model</h2><div class="ulist"><ul><li><p>Polyglot programming</p></li><li><p>Multiple variants</p></li><li><p>Scalability</p></li><li><p>Continuous delivery</p></li><li><p>Speed</p></li></ul></div></section>
+<section><section id="example-modelling-a-java-library"><h2>Example: modelling a Java library</h2></section><section id="apply-the-java-software-model-plugins"><h2>Apply the Java software model plugins</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">plugins {
+    id 'jvm-component'
+    id 'java-lang'
+}</code></pre></div></div></section><section id="declare-a-library"><h2>Declare a library</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        main(JvmLibrarySpec)
+    }
+}</code></pre></div></div></section></section>
+<section id="the-rule-engine"><h2>The rule engine</h2><div class="ulist"><ul><li><p>New way to write plugins</p></li><li><p>New way to configure builds</p></li><li><p>But likely to change soon</p></li><li><p>More in the variant-aware dependency management talk</p></li></ul></div></section>
+<section><section id="modelling-a-java-application"><h2>Modelling a Java application</h2></section><section id="application-with-a-dependent-library"><h2>Application with a dependent library</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        app(JvmLibrarySpec)
+	myLib(JvmLibrarySpec)
+    }
+}</code></pre></div></div></section><section id="project-layout"><h2>Project layout</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>src
+ |-- app
+ |    |-- java
+ |-- myLib
+      |-- java</code></pre></div></div></section><section id="declare-the-dependency-onto-the-library"><h2>Declare the dependency onto the library</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        app(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        library 'myLib'
+                    }
+                }
+            }
+        }
+	myLib(JvmLibrarySpec)
+    }
+}</code></pre></div></div></section><section id="add-a-dependency-onto-an-external-library"><h2>Add a dependency onto an external library</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        app(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        library 'myLib'
+                        module 'org.ow2.asm:asm:5.0.4'
+                    }
+                }
+            }
+        }
+	myLib(JvmLibrarySpec)
+    }
+}</code></pre></div></div></section><section id="component-level-dependencies"><h2>Component level dependencies</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        app(JvmLibrarySpec) {
+            dependencies {
+                library 'myLib'
+                module 'org.ow2.asm:asm:5.0.4'
+            }
+        }
+	myLib(JvmLibrarySpec)
+    }
+}</code></pre></div></div></section><section id="api-vs-implementation"><h2>API vs implementation</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+   components {
+       myLib(JvmLibrarySpec) {
+           api {
+              exports 'com.acme.mylib' // not recursive!
+           }
+       }
+   }
+}</code></pre></div></div></section><section id="in-action"><h2>In action</h2><div class="paragraph"><p>
+<div id="player-container-74ef6ae6-82d5-4303-8b8c-e42e5f02278f"></div>
+  <script>
+    asciinema_player.core.CreatePlayer('player-container-74ef6ae6-82d5-4303-8b8c-e42e5f02278f', 'compile-avoidance.json', { width: 114, height: 24, fontSize: 'medium' });
+  </script>
+</p></div></section><section id="api-vs-implementation-benefits"><h2>API vs implementation benefits</h2><div class="ulist"><ul><li><p>Strong encapsulation</p><div class="ulist"><ul><li><p>No more private API leakage</p></li><li><p>Prepare for Jigsaw today!</p></li></ul></div></li><li><p>Compile avoidance</p><div class="ulist"><ul><li><p>If private API changes</p></li><li><p>If public API changes in ABI compatible way</p></li></ul></div></li></ul></div></section><section id="api-dependencies"><h2>API dependencies</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+   components {
+       myLib(JvmLibrarySpec) {
+           api {
+              dependencies {
+                 library 'com.google.guava:guava:17.0'
+              }
+           }
+       }
+   }
+}</code></pre></div></div></section><section id="target-platforms"><h2>Target platforms</h2><h3>Declaring target platforms</h3><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+   components {
+       myLib(JvmLibrarySpec) {
+           targetPlatform 'java7'
+           targetPlatform 'java8'
+       }
+   }
+}</code></pre></div></div>
+<h3>Binaries</h3><div class="ulist"><ul><li><p><code>myLib.jar</code> for Java 7</p></li><li><p><code>myLib.jar</code> for Java 8</p></li><li><p>Each one can have its own source sets/dependencies.</p></li></ul></div></section><section id="variant-aware"><h2>Variant aware</h2><div class="paragraph"><p>
+<div id="player-container-e3a60cb9-1da8-40f9-99b0-1c072274594d"></div>
+  <script>
+    asciinema_player.core.CreatePlayer('player-container-e3a60cb9-1da8-40f9-99b0-1c072274594d', 'target-platform.json', { width: 114, height: 24, fontSize: 'medium' });
+  </script>
+</p></div></section></section>
+<section><section id="testing" data-background="images/checked.png"><h2>Testing</h2></section><section id="junit"><h2>JUnit</h2><div class="ulist"><ul><li><p>So far only <code>junit</code> is supported</p></li><li><p>Adding more frameworks should be easy</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">plugins {
+    id 'jvm-component'
+    id 'java-lang'
+    id 'junit-test-suite'
+}</code></pre></div></div></section><section id="declaring-a-test-suite"><h2>Declaring a test suite</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    components {
+        main(JvmLibrarySpec)
+    }
+    testSuites {
+        test(JUnitTestSuiteSpec) {
+            jUnitVersion '4.12'
+            testing $.components.main
+        }
+    }
+}</code></pre></div></div></section><section id="test-suites"><h2>Test suites</h2><div class="ulist"><ul><li><p>Have JUnit version specified as a first-class model element</p></li><li><p>Could support multiple target versions of JUnit</p></li><li><p>Have their own target platforms</p></li><li><p>Target a specific component</p></li></ul></div></section></section>
+<section><section id="future-work"><h2>Future work</h2></section><section id="toolchain-support"><h2>Toolchain support</h2><h3>Declaring JDKs</h3><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    javaInstallations {
+        openJdk6(LocalJava) {
+            path '/usr/lib/jvm/jdk1.6.0-amd64'
+        }
+        oracleJre7(LocalJava) {
+            path '/usr/lib/jvm/jre1.7.0'
+        }
+        ibmJdk8(LocalJava) {
+            path '/usr/lib/jvm/jdk1.8.0'
+        }
+    }
+}</code></pre></div></div>
+<h3>Using JDKs</h3><div class="ulist"><ul><li><p>Automatic detection</p></li><li><p>Automatic selection of toolchain</p></li><li><p>Test on various platforms</p></li><li><p>&#8230;&#8203;</p></li></ul></div></section><section id="more-models"><h2>More models!</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    myPlugin(GradlePlugin) {
+        targetGradleVersions '2.14', '3.0'
+        // ...
+    }
+}</code></pre></div></div></section><section id="more-models-2"><h2>More models!</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    microservice(SpringBootApplication) {
+        springBootVersion '1.3.5'
+        // ...
+    }
+}</code></pre></div></div></section><section id="more-models-3"><h2>More models!</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">model {
+    dockerImage(DockerImage) {
+        from 'alpine:3.2'
+        // ...
+    }
+}</code></pre></div></div></section><section id="but"><h2>But&#8230;&#8203;</h2></section></section>
+<section id="questions" data-background="images/questions.jpg"></section>
+<section id="we-re-hiring"><h2>We&#8217;re hiring!</h2><div class="paragraph"><p><a href="http://gradle.org/gradle-jobs/" class="bare">http://gradle.org/gradle-jobs/</a></p></div>
+<div class="imageblock" style=""><div class="content"><img src="./images/GradleLogoLarge.png" alt="GradleLogoLarge" /></div></div></section>
+<section id="thank-you"><h2>Thank you!</h2><div class="ulist"><ul><li><p>Slides and code : <a href="https://github.com/melix/gr8conf2016/intro-software-model" class="bare">https://github.com/melix/gr8conf2016/intro-software-model</a></p></li><li><p>Follow me: <a href="http://twitter.com/CedricChampeau">@CedricChampeau</a></p></li></ul></div></section>
+<section id="attributions"><h2>Attributions</h2><div class="ulist"><ul><li><p>Tests: <a href="https://www.flickr.com/photos/otacke/12221514614" class="bare">https://www.flickr.com/photos/otacke/12221514614</a></p></li><li><p>Q&amp;A: <a href="https://www.flickr.com/photos/oberazzi/318947873" class="bare">https://www.flickr.com/photos/oberazzi/318947873</a></p></li></ul></div></section>
+<section><section id="extra-time-the-rule-engine"><h2>Extra time: The rule engine</h2></section><section id="managed-types"><h2>Managed types</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">@Managed
+interface ImageComponent extends LibrarySpec {
+    String getTitle()
+    void setTitle(String title)
+    List&lt;String&gt; getSizes()
+    void setSizes(List&lt;String&gt; sizes)
+}</code></pre></div></div></section><section id="rules"><h2>Rules</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">class MyImageRenderingPlugin extends RuleSource {
+    @ComponentType
+    void registerComponent(TypeBuilder&lt;ImageComponent&gt; builder) {
+    }
+
+    @ComponentType
+    void registerBinary(TypeBuilder&lt;ImageBinary&gt; builder) {
+    }
+...</code></pre></div></div></section><section id="binaries-2"><h2>Binaries</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">@Managed
+interface ImageBinary extends BinarySpec {
+    String getTitle()
+    void setTitle(String title)
+    String getSize()
+    void setSize(String size)
+}</code></pre></div></div></section><section id="creating-binaries"><h2>Creating binaries</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">    @ComponentBinaries
+    void createBinariesForBinaryComponent(ModelMap&lt;ImageBinary&gt; binaries, ImageComponent library) {
+        library.sizes.each { fontSize -&gt;
+            binaries.create(fontSize) {
+                size = fontSize;
+                title = library.title
+            }
+        }
+    }
+
+    @BinaryTasks
+    void createRenderingTasks(ModelMap&lt;Task&gt; tasks, ImageBinary binary) {
+        tasks.create(binary.tasks.taskName("render", "svg"), RenderSvg){
+            it.content = binary.title;
+            it.fontSize = binary.size;
+            it.outputFile = new File(it.project.buildDir, "renderedSvg/${binary.title}_${binary.size}.svg")
+        }
+    }</code></pre></div></div></section><section id="generic-rules"><h2>Generic rules</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="groovy language-groovy">        @Mutate
+        public void registerPlatformResolver(PlatformResolvers platformResolvers) {
+            platformResolvers.register(new JavaPlatformResolver());
+        }
+
+        @Model
+        JavaInstallationProbe javaInstallationProbe(ServiceRegistry serviceRegistry) {
+            return serviceRegistry.get(JavaInstallationProbe.class);
+        }</code></pre></div></div></section></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'sky',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'linear',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script><div id="footer">
+  <div class="display:inline">
+     #gr8conf #gradle - @CedricChampeau
+  </div>
+</div></body></html>

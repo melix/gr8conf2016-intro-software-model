@@ -1,0 +1,446 @@
+{
+  "version": 1,
+  "width": 114,
+  "height": 24,
+  "duration": 43.095089,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.575546,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step2 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      2.731459,
+      "c"
+    ],
+    [
+      0.186638,
+      "a"
+    ],
+    [
+      0.261969,
+      "t"
+    ],
+    [
+      1.618949,
+      " "
+    ],
+    [
+      0.909131,
+      "c"
+    ],
+    [
+      0.074781,
+      "o"
+    ],
+    [
+      0.181481,
+      "re/"
+    ],
+    [
+      0.720992,
+      "s"
+    ],
+    [
+      0.198578,
+      "r"
+    ],
+    [
+      0.147744,
+      "c/"
+    ],
+    [
+      0.258666,
+      "m"
+    ],
+    [
+      0.119605,
+      "ain/"
+    ],
+    [
+      0.341027,
+      "java/"
+    ],
+    [
+      0.336602,
+      "com/"
+    ],
+    [
+      0.328938,
+      "acme/"
+    ],
+    [
+      0.320520,
+      "\u0007"
+    ],
+    [
+      0.391120,
+      "i"
+    ],
+    [
+      0.237986,
+      "nternal/"
+    ],
+    [
+      0.326159,
+      "GreeterIn\rnternal.java "
+    ],
+    [
+      0.663557,
+      "\r\n"
+    ],
+    [
+      0.000942,
+      "package com.acme.internal;\r\n\r\nimport org.apache.commons.lang3.StringUtils;\r\n\r\npublic class GreeterInternal {"
+    ],
+    [
+      0.000006,
+      "\r\n   public static String normalize(String name) {\r\n       return StringUtils.capitalize(name);\r\n   }\r\n}\r\n"
+    ],
+    [
+      0.071441,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step2 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      6.714626,
+      "c"
+    ],
+    [
+      0.218331,
+      "a"
+    ],
+    [
+      0.187952,
+      "t"
+    ],
+    [
+      0.113647,
+      " "
+    ],
+    [
+      0.154225,
+      "c"
+    ],
+    [
+      0.719382,
+      "o"
+    ],
+    [
+      0.560297,
+      "r"
+    ],
+    [
+      0.173737,
+      "e/"
+    ],
+    [
+      1.044892,
+      "b"
+    ],
+    [
+      0.186726,
+      "uild.gradle "
+    ],
+    [
+      0.518172,
+      "\r\n"
+    ],
+    [
+      0.001218,
+      "plugins {\r\n   id 'jvm-component'\r\n   id 'java-lang'\r\n   id 'junit-test-suite'\r\n}"
+    ],
+    [
+      0.000009,
+      "\r\n\r\nrepositories { jcenter() }\r\n\r\nmodel {\r\n   components {\r\n       main(JvmLibrarySpec) {\r\n           sources {"
+    ],
+    [
+      0.000006,
+      "\r\n\u0009      java {"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "                 dependencies {\r\n"
+    ],
+    [
+      0.000005,
+      "                    module 'org.apache.commons:commons-lang3:3.4'"
+    ],
+    [
+      0.000004,
+      "\r\n                 }"
+    ],
+    [
+      0.000005,
+      "\r\n              }"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "           }"
+    ],
+    [
+      0.000004,
+      "\r\n       }"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000005,
+      "   }\r\n"
+    ],
+    [
+      0.000004,
+      "}"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.080816,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step2 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      7.621718,
+      "g"
+    ],
+    [
+      0.103997,
+      "l"
+    ],
+    [
+      0.169904,
+      " "
+    ],
+    [
+      0.144310,
+      "b"
+    ],
+    [
+      0.137991,
+      "u"
+    ],
+    [
+      0.076329,
+      "i"
+    ],
+    [
+      0.228262,
+      "l"
+    ],
+    [
+      0.086389,
+      "d"
+    ],
+    [
+      1.132729,
+      "\r\n"
+    ],
+    [
+      0.293910,
+      "\u001b["
+    ],
+    [
+      0.000023,
+      "0m"
+    ],
+    [
+      0.520349,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.101113,
+      "\u001b[9D:core:compileMainJarMainJava\r\n"
+    ],
+    [
+      0.000007,
+      ":core:mainApiJar\r\n"
+    ],
+    [
+      0.000015,
+      ":cli:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000048,
+      ":cli:createMainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000005,
+      ":cli:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000029,
+      ":cli:mainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000030,
+      ":cli:assemble \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.013197,
+      ":cli:check \u001b[33mUP-TO-DATE\u001b[39m\r\n:cli:build \u001b[33mUP-TO-DATE\u001b[39m\r\n:core:createMainJar\r\n:core:mainJar\r\n:core:assemble\r\n:core:check \u001b[33mUP-TO-DATE\u001b[39m\r\n:core:build\r\n\r\nBUILD SUCCESSFUL\r\n\r\nTotal time: 0.847 secs\r\n\u001b[0K"
+    ],
+    [
+      0.174483,
+      "\u001b["
+    ],
+    [
+      0.000011,
+      "0m"
+    ],
+    [
+      0.396518,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step2 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      6.234283,
+      "gl build"
+    ],
+    [
+      0.278664,
+      "\r\n"
+    ],
+    [
+      0.247368,
+      "\u001b"
+    ],
+    [
+      0.000015,
+      "[0m"
+    ],
+    [
+      0.366065,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.057445,
+      "\u001b[9D:core:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000007,
+      ":core:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000019,
+      ":cli:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000033,
+      ":cli:createMainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000004,
+      ":cli:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000029,
+      ":cli:mainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000015,
+      ":cli:assemble \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000015,
+      ":cli:check \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000015,
+      ":cli:build \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000024,
+      ":core:createMainJar \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000016,
+      ":core:mainJar \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000017,
+      ":core:assemble \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000027,
+      ":core:check \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000016,
+      ":core:build \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n\r\n"
+    ],
+    [
+      0.000010,
+      "BUILD SUCCESSFUL"
+    ],
+    [
+      0.000003,
+      "\r\n\r\n"
+    ],
+    [
+      0.000014,
+      "Total time: 0.615 secs"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000003,
+      "\u001b[0K"
+    ],
+    [
+      0.001943,
+      "\u001b[0m"
+    ],
+    [
+      0.389085,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step2 \u001b[31m \u001b[00m$\u001b[00m "
+    ]
+  ]
+}

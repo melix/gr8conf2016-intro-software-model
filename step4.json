@@ -1,0 +1,594 @@
+{
+  "version": 1,
+  "width": 114,
+  "height": 24,
+  "duration": 36.660731,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.184617,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step4 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      1.467618,
+      "c"
+    ],
+    [
+      0.198925,
+      "a"
+    ],
+    [
+      0.221234,
+      "t"
+    ],
+    [
+      0.175225,
+      " "
+    ],
+    [
+      0.115852,
+      "c"
+    ],
+    [
+      0.134305,
+      "o"
+    ],
+    [
+      0.107588,
+      "r"
+    ],
+    [
+      0.081053,
+      "e"
+    ],
+    [
+      0.213167,
+      "/"
+    ],
+    [
+      0.299120,
+      "b"
+    ],
+    [
+      0.214221,
+      "u"
+    ],
+    [
+      0.051818,
+      "i"
+    ],
+    [
+      0.164239,
+      "\u0007"
+    ],
+    [
+      0.000006,
+      "ld"
+    ],
+    [
+      0.890145,
+      "."
+    ],
+    [
+      0.260435,
+      "gradle "
+    ],
+    [
+      0.521396,
+      "\r\n"
+    ],
+    [
+      0.002016,
+      "plugins {\r\n   id 'jvm-component'\r\n   id 'java-lang'\r\n   id 'junit-test-suite'\r\n}"
+    ],
+    [
+      0.000015,
+      "\r\n\r\nrepositories { jcenter() }\r\n\r\nmodel {\r\n   components {\r\n       main(JvmLibrarySpec) {"
+    ],
+    [
+      0.000009,
+      "\r\n           sources {\r\n"
+    ],
+    [
+      0.000009,
+      "\u0009      java {"
+    ],
+    [
+      0.000008,
+      "\r\n                 dependencies {\r\n"
+    ],
+    [
+      0.000009,
+      "                    module 'org.apache.commons:commons-lang3:3.4'\r\n"
+    ],
+    [
+      0.000008,
+      "                 }\r\n              }"
+    ],
+    [
+      0.000008,
+      "\r\n           }"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.000008,
+      "           api {\r\n"
+    ],
+    [
+      0.000009,
+      "              exports 'com.acme'"
+    ],
+    [
+      0.000008,
+      "\r\n           }\r\n"
+    ],
+    [
+      0.000008,
+      "       }\r\n"
+    ],
+    [
+      0.000008,
+      "   }\r\n}"
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.096057,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step4 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      5.074869,
+      "g"
+    ],
+    [
+      0.084041,
+      "l"
+    ],
+    [
+      0.178850,
+      " "
+    ],
+    [
+      0.158320,
+      "c"
+    ],
+    [
+      0.178293,
+      "o"
+    ],
+    [
+      0.119192,
+      "r"
+    ],
+    [
+      0.096968,
+      "e"
+    ],
+    [
+      0.686508,
+      ":"
+    ],
+    [
+      0.519310,
+      "b"
+    ],
+    [
+      0.091569,
+      "u"
+    ],
+    [
+      0.080615,
+      "i"
+    ],
+    [
+      0.236313,
+      "l"
+    ],
+    [
+      0.076952,
+      "d"
+    ],
+    [
+      0.537115,
+      "\r\n"
+    ],
+    [
+      0.250700,
+      "\u001b[0m"
+    ],
+    [
+      0.550379,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.106279,
+      "\u001b[9D\u001b[1m\u003e Configuring \u003e 2/3 projects \u003e :core \u003e Compiling /home/cchampeau/Documents/talks/jigsawcamp2016/step4/core/build.\u001b[22m"
+    ],
+    [
+      0.257118,
+      "\u001b[113D:core:compileMainJarMainJava\u001b[0K"
+    ],
+    [
+      0.005268,
+      "\r\n"
+    ],
+    [
+      0.000023,
+      ":core:createMainJar"
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.000015,
+      ":core:mainApiJar"
+    ],
+    [
+      0.000006,
+      "\r\n"
+    ],
+    [
+      0.000007,
+      ":core:mainJar"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000053,
+      ":core:assemble"
+    ],
+    [
+      0.000449,
+      "\r\n"
+    ],
+    [
+      0.000032,
+      ":core:check \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000789,
+      "\r\n"
+    ],
+    [
+      0.000041,
+      ":core:build\r\n"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000009,
+      "BUILD SUCCESSFUL\r\n"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000010,
+      "Total time: 1.089 secs"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "\u001b[0K"
+    ],
+    [
+      0.301169,
+      "\u001b[0m"
+    ],
+    [
+      0.396666,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step4 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      4.622810,
+      "gl core:build"
+    ],
+    [
+      0.372342,
+      "\r\n"
+    ],
+    [
+      0.358003,
+      "\u001b[0m"
+    ],
+    [
+      0.498687,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.062627,
+      "\u001b[9D:core:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000007,
+      "\r\n:core:createMainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000025,
+      ":core:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000020,
+      ":core:mainJar \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000023,
+      ":core:assemble \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000031,
+      ":core:check \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000032,
+      ":core:build \u001b[33mUP-TO-DATE\u001b[39m"
+    ],
+    [
+      0.000005,
+      "\r\n\r\n"
+    ],
+    [
+      0.000009,
+      "BUILD SUCCESSFUL"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000018,
+      "Total time: 0.811 secs"
+    ],
+    [
+      0.000005,
+      "\r\n\u001b[0K"
+    ],
+    [
+      0.005524,
+      "\u001b[0m"
+    ],
+    [
+      0.391367,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step4 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      3.204001,
+      "g"
+    ],
+    [
+      0.094971,
+      "l"
+    ],
+    [
+      0.387836,
+      " "
+    ],
+    [
+      0.111778,
+      "c"
+    ],
+    [
+      0.131622,
+      "l"
+    ],
+    [
+      0.077297,
+      "i"
+    ],
+    [
+      0.797990,
+      ":"
+    ],
+    [
+      0.341542,
+      "b"
+    ],
+    [
+      0.133733,
+      "u"
+    ],
+    [
+      0.077143,
+      "i"
+    ],
+    [
+      0.233659,
+      "l"
+    ],
+    [
+      0.096217,
+      "d"
+    ],
+    [
+      0.726760,
+      "\r\n"
+    ],
+    [
+      0.237164,
+      "\u001b[0m"
+    ],
+    [
+      0.391250,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.089214,
+      "\u001b[9D:core:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000013,
+      ":core:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000007,
+      ":cli:compileMainJarMainJava"
+    ],
+    [
+      0.000006,
+      "\r\n"
+    ],
+    [
+      0.000082,
+      "/home/cchampeau/Documents/talks/jigsawcamp2016/step4/cli/src/main/java/com/acme/cli/GreeterCli.java:4: error: package com.acme.i"
+    ],
+    [
+      0.000007,
+      "nternal does not exist\r\n"
+    ],
+    [
+      0.000026,
+      "import com.acme.internal.GreeterInternal;"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000010,
+      "                        ^"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000037,
+      "\u001b[1m\u003e Building 22% \u003e :cli:compileMainJarMainJava\u001b[22m"
+    ],
+    [
+      0.078397,
+      "\u001b[44D/home/cchampeau/Documents/talks/jigsawcamp2016/step4/cli/src/main/java/com/acme/cli/GreeterCli.java:26: error: cannot find "
+    ],
+    [
+      0.000011,
+      "symbol\r\n        return GreeterInternal.normalize(reader.readLine());\r\n               ^"
+    ],
+    [
+      0.000006,
+      "\r\n"
+    ],
+    [
+      0.000005,
+      "  symbol:   variable GreeterInternal\r\n"
+    ],
+    [
+      0.000005,
+      "  location: class GreeterCli"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "2 errors\r\n"
+    ],
+    [
+      0.000016,
+      ":cli:compileMainJarMainJava \u001b[33mFAILED\u001b[39m"
+    ],
+    [
+      0.000004,
+      "\r\n\r\n"
+    ],
+    [
+      0.000016,
+      "\u001b[31mFAILURE: \u001b[39m\u001b[31mBuild failed with an exception.\u001b[39m"
+    ],
+    [
+      0.000004,
+      "\r\n\r\n"
+    ],
+    [
+      0.000012,
+      "* What went wrong:\r\n"
+    ],
+    [
+      0.000016,
+      "Execution failed for task ':cli:compileMainJarMainJava'."
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000005,
+      "\u001b[33m\u003e \u001b[39mCompilation failed; see the compiler error output for details."
+    ],
+    [
+      0.000004,
+      "\r\n\r\n"
+    ],
+    [
+      0.000004,
+      "* Try:\r\n"
+    ],
+    [
+      0.000024,
+      "Run with \u001b[1m--stacktrace\u001b[22m option to get the stack trace. Run with \u001b[1m--info\u001b[22m or \u001b[1m--debug\u001b[22m option to get more lo"
+    ],
+    [
+      0.000005,
+      "g output.\r\n\r\n\u001b[31mBUILD FAILED\u001b[39m\r\n"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "Total time: 0.686 secs\r\n"
+    ],
+    [
+      0.000005,
+      "\u001b[0K"
+    ],
+    [
+      0.000866,
+      "\u001b["
+    ],
+    [
+      0.000005,
+      "0m"
+    ],
+    [
+      0.388010,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step4 \u001b[31m \u001b[00m$\u001b[00m "
+    ]
+  ]
+}

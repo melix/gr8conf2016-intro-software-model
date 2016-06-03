@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "width": 114,
+  "height": 24,
+  "duration": 20.799161,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.184395,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step3 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      1.958862,
+      "c"
+    ],
+    [
+      0.216375,
+      "a"
+    ],
+    [
+      0.164359,
+      "t"
+    ],
+    [
+      0.133561,
+      " "
+    ],
+    [
+      0.143737,
+      "c"
+    ],
+    [
+      0.057769,
+      "l"
+    ],
+    [
+      0.106860,
+      "i"
+    ],
+    [
+      0.307066,
+      "/"
+    ],
+    [
+      0.272798,
+      "s"
+    ],
+    [
+      0.139558,
+      "r"
+    ],
+    [
+      0.152088,
+      "c/"
+    ],
+    [
+      0.252591,
+      "m"
+    ],
+    [
+      0.175244,
+      "ain/"
+    ],
+    [
+      0.275889,
+      "java/"
+    ],
+    [
+      0.174530,
+      "com/"
+    ],
+    [
+      0.172298,
+      "acme/"
+    ],
+    [
+      0.176005,
+      "cli/"
+    ],
+    [
+      0.180822,
+      "GreeterCli.java\ra "
+    ],
+    [
+      0.539556,
+      "\r\n"
+    ],
+    [
+      0.000887,
+      "package com.acme.cli;\r\n"
+    ],
+    [
+      0.000009,
+      "\r\nimport com.acme.Greeter;\r\nimport com.acme.internal.GreeterInternal;\r\n\r\nimport java.io.*;\r\n\r\n"
+    ],
+    [
+      0.000006,
+      "public class GreeterCli {\r\n\r\n    public static void main(String... args) {"
+    ],
+    [
+      0.000005,
+      "\r\n    \u0009"
+    ],
+    [
+      0.000004,
+      " try {\r\n"
+    ],
+    [
+      0.000005,
+      "\u0009         Greeter greeter = new Greeter();"
+    ],
+    [
+      0.000004,
+      "\r\n\u0009"
+    ],
+    [
+      0.000005,
+      "         String line;\r\n"
+    ],
+    [
+      0.000005,
+      "\u0009         BufferedReader reader = new BufferedReader(\r\n"
+    ],
+    [
+      0.000004,
+      "\u0009         "
+    ],
+    [
+      0.000005,
+      "\u0009new InputStreamReader(System.in));"
+    ],
+    [
+      0.000005,
+      "\r\n\u0009         while ((line=readName(reader))!=null) {"
+    ],
+    [
+      0.000004,
+      "\r\n\u0009"
+    ],
+    [
+      0.000007,
+      "             System.out.println(greeter.greet(line));\r\n\u0009"
+    ],
+    [
+      0.000004,
+      "         }\r\n\u0009"
+    ],
+    [
+      0.000005,
+      "     } catch (Exception e) {\r\n"
+    ],
+    [
+      0.000004,
+      "\u0009     "
+    ],
+    [
+      0.000005,
+      "\u0009e.printStackTrace();"
+    ],
+    [
+      0.000004,
+      "\r\n\u0009     }"
+    ],
+    [
+      0.000005,
+      "\r\n\u0009"
+    ],
+    [
+      0.000004,
+      "}\r\n"
+    ],
+    [
+      0.000006,
+      "\r\n    private static String readName(BufferedReader reader) throws IOException {"
+    ],
+    [
+      0.000005,
+      "\r\n        System.out.print(\"Name\u003e \");\r\n"
+    ],
+    [
+      0.000005,
+      "        return GreeterInternal.normalize(reader.readLine());\r\n"
+    ],
+    [
+      0.000005,
+      "    }\r\n\r\n"
+    ],
+    [
+      0.000004,
+      "}\r\n"
+    ],
+    [
+      0.073337,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step3 \u001b[31m \u001b[00m$\u001b[00m "
+    ],
+    [
+      5.476483,
+      "g"
+    ],
+    [
+      0.070046,
+      "l"
+    ],
+    [
+      0.128815,
+      " "
+    ],
+    [
+      0.139285,
+      "b"
+    ],
+    [
+      0.112421,
+      "u"
+    ],
+    [
+      0.084244,
+      "i"
+    ],
+    [
+      0.223635,
+      "l"
+    ],
+    [
+      0.099868,
+      "d"
+    ],
+    [
+      0.520466,
+      "\r\n"
+    ],
+    [
+      0.234918,
+      "\u001b[0"
+    ],
+    [
+      0.000022,
+      "m"
+    ],
+    [
+      0.364223,
+      "\u001b[1m\u003e Loading\u001b[22m"
+    ],
+    [
+      0.088918,
+      "\u001b[9D:core:compileMainJarMainJava \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000010,
+      ":core:mainApiJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000029,
+      "\u001b[1m\u003e Building 14% \u003e :cli:compileMainJarMainJava\u001b[22m"
+    ],
+    [
+      0.040560,
+      "\u001b[44D:cli:compileMainJarMainJava\u001b[0K\r\n"
+    ],
+    [
+      0.000010,
+      ":cli:createMainJar\r\n:cli:mainApiJar\r\n"
+    ],
+    [
+      0.000005,
+      ":cli:mainJar\r\n"
+    ],
+    [
+      0.000017,
+      ":cli:assemble\r\n"
+    ],
+    [
+      0.000013,
+      ":cli:check \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000011,
+      ":cli:build\r\n"
+    ],
+    [
+      0.000028,
+      ":core:createMainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000017,
+      ":core:mainJar \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000027,
+      ":core:assemble \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000019,
+      ":core:check \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000021,
+      ":core:build \u001b[33mUP-TO-DATE\u001b[39m\r\n"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000005,
+      "BUILD SUCCESSFUL"
+    ],
+    [
+      0.000004,
+      "\r\n\r\n"
+    ],
+    [
+      0.000029,
+      "Total time: 0.654 secs\r\n"
+    ],
+    [
+      0.000004,
+      "\u001b[0K"
+    ],
+    [
+      0.003232,
+      "\u001b["
+    ],
+    [
+      0.000008,
+      "0m"
+    ],
+    [
+      0.391065,
+      "\u001b[1;32mcchampeau@cedric-xps15\u001b[01;34m step3 \u001b[31m \u001b[00m$\u001b[00m "
+    ]
+  ]
+}
