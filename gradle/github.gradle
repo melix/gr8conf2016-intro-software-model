@@ -1,0 +1,10 @@
+apply plugin: 'org.ajoberstar.github-pages'
+
+githubPages {
+    repoUri = 'git@github.com:melix/gr8conf2016-intro-software-model.git'
+    pages {
+        from file("$buildDir/asciidoc/revealjs")
+    }
+}
+
+publishGhPages.dependsOn(asciidoctor)

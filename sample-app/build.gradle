@@ -1,0 +1,24 @@
+plugins {
+    id 'jvm-component'
+    id 'java-lang'
+}
+
+model {
+    components {
+        app(JvmLibrarySpec) {
+            sources {
+                java {
+                    dependencies {
+                        library 'myLib'
+                    }
+                }
+            }
+        }
+	myLib(JvmLibrarySpec) {
+            api {
+                exports 'com.acme.mylib'
+            }
+        }
+    }
+}
+

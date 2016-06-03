@@ -1,0 +1,7 @@
+= Introduction to the new Java software model
+
+Slides for talk given at GR8Conf Copenhagen 2016.
+
+Pre-rendered slides can be viewed at http://melix.github.io/gr8conf2016-intro-software-model
+
+
